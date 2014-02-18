@@ -10,22 +10,19 @@ module.exports = function(grunt) {
     concat: {
       js: {
         options: {
-          separator: ';'
+          seperator: ';'
         },
         src: [
-          'public/js/*.js'
+          'js/*.js'
         ],
-        dest: 'dist/js/thud.min.js'
+        dest: 'thud.js'
       },
     },
 
     uglify: {
-      options: {
-        mangle: false
-      },
       js: {
         files: {
-          'dist/js/thud.min.js': ['dist/js/thud.min.js']
+          'thud.min.js': ['thud.js']
         } 
       }
     },
@@ -36,13 +33,13 @@ module.exports = function(grunt) {
         livereload: true,
       },
       html: {        
-        files: ['public/*.html'],
+        files: ['*.html'],
         options: {
           livereload: true,
         }
       },
       js: {
-        files: ['public/js/*.js'],
+        files: ['js/*.js'],
         tasks: ['concat', 'uglify'],
         options: {
           livereload: true,
